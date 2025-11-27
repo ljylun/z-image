@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     git \
     ninja-build \
     curl \
+    ca-certificates \
     && add-apt-repository ppa:deadsnakes/ppa \
     && apt-get update && apt-get install -y \
     python3.11 \
