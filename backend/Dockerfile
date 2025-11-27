@@ -26,7 +26,7 @@ RUN ln -sf /usr/bin/python3.11 /usr/bin/python && \
 WORKDIR /app
 
 # Install PyTorch and build dependencies
-RUN pip install packaging ninja "torch==2.7.1" "torchvision==0.22.1" "torchaudio==2.7.1" --index-url https://download.pytorch.org/whl/cu124
+RUN pip install packaging ninja "torch==2.7.1" "torchvision==0.22.1" "torchaudio==2.7.1" --extra-index-url https://download.pytorch.org/whl/cu124
 
 # Install Flash Attention
 # Using --no-build-isolation to ensure it uses the installed PyTorch
