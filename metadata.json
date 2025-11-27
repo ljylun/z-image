@@ -1,0 +1,5 @@
+{
+  "name": "Z-Image-Turbo UI",
+  "description": "A high-performance React interface for the Z-Image-Turbo diffusion model, running on a custom CUDA 12.4 Docker backend.",
+  "requestFramePermissions": []
+}

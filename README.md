@@ -1,11 +1,29 @@
-<div align="center">
+# Z-Image-Turbo UI & Docker Environment
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+This project consists of a React Frontend and a CUDA-accelerated Python Backend for the Z-Image-Turbo model.
 
-  <h1>Built with AI Studio</h2>
+## Prerequisites
+- Docker & NVIDIA Container Toolkit (for GPU support)
+- Node.js 18+
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Quick Start
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### 1. Start the Backend (Docker)
+This sets up the environment with CUDA 12.4, Flash Attention 3, and the latest diffusers.
 
-</div>
+```bash
+cd backend
+docker build -t z-image-turbo-backend .
+docker run --gpus all -p 8000:8000 z-image-turbo-backend
+```
+
+### 2. Start the Frontend
+```bash
+npm install
+npm start
+```
+
+## Configuration
+- The backend runs on `localhost:8000`.
+- The frontend proxy or API service points to this URL.
+- Ensure your GPU has enough VRAM (approx 16GB+ recommended for 1024x1024 bfloat16).

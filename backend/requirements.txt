@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+transformers
+accelerate
+sentencepiece
+protobuf
+opencv-python-headless
+pillow
+numpy
