@@ -1,10 +1,11 @@
 fastapi
 uvicorn
 pydantic
-transformers
 accelerate
+transformers
 sentencepiece
 protobuf
 opencv-python-headless
 pillow
 numpy
+python-multipart
