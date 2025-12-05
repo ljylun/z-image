@@ -11,7 +11,16 @@ This project consists of a React Frontend and a CUDA-accelerated Python Backend 
 - **Frontend**: React + Tailwind + Lucide (Port 3000)
 - **Backend**: FastAPI + PyTorch + Diffusers (Port 8000)
 
-## Quick Start
+## Quick Start (Docker Compose)
+The easiest way to run the entire stack is using Docker Compose.
+
+```bash
+docker-compose up --build
+```
+This will start both the frontend (http://localhost:3000) and backend (http://localhost:8000).
+
+## Manual Setup
+If you prefer to run services individually:
 
 ### 1. Start the Backend (Docker)
 This builds a container with CUDA 12.4, Flash Attention 2, and the latest Diffusers library.

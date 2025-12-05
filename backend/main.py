@@ -6,7 +6,18 @@ from io import BytesIO
 from fastapi.responses import Response
 import os
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(title="Z-Image Generation API")
+
+# Configure CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, replace with specific origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Global variable for the pipeline
 pipe = None
