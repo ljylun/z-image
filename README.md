@@ -8,7 +8,7 @@ This project consists of a React Frontend and a CUDA-accelerated Python Backend 
 - Node.js 18+
 
 ## Architecture
-- **Frontend**: React + Tailwind + Lucide (Port 3000/8080)
+- **Frontend**: React + Tailwind + Lucide (Port 3000)
 - **Backend**: FastAPI + PyTorch + Diffusers (Port 8000)
 
 ## Quick Start
@@ -40,12 +40,17 @@ docker run --gpus all -p 8000:8000 z-image-turbo-backend
 **Note on Flash Attention 2**: 
 The Dockerfile installs the `flash-attn` package which provides Flash Attention 2. This requires an NVIDIA GPU with Ampere architecture (RTX 3090, A100) or newer (Ada/Hopper). If your GPU is older (e.g., Turing/Volta), the installation might fail or fallback to standard attention mechanisms.
 
-### 2. Start the Frontend
+### 2. Start the Frontend (Docker)
 Open a new terminal in the project root:
 
 ```bash
-npm install
-npm start
+cd frontend
+
+# Build the frontend image
+docker build -t z-image-turbo-frontend .
+
+# Run the container
+docker run -p 3000:3000 z-image-turbo-frontend
 ```
 
 ## Usage
